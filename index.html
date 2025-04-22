@@ -4,20 +4,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TV Show Project | Hasan Demiroz (hasandemiroz) </title>
+  <title>TV Show Browser | Hasan Demiroz</title>
   <link href="style.css" rel="stylesheet" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
-  <div id="root">
-    <h1>TV Show Project</h1>
-  </div>
+  <header>
+    <nav>
+      <a href="#" id="return-to-shows" style="display: none;">← Back to Shows</a>
+      <h1>TV Show Browser</h1>
+    </nav>
+    <div id="search-container">
+      <input type="text" id="global-search" placeholder="Search shows or episodes...">
+    </div>
+  </header>
 
-  <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-  <script src="episodes.js"></script>
+  <main>
+    <div id="shows-container" class="grid"></div>
+    <div id="episodes-container" class="grid" style="display: none;"></div>
 
-  <!-- Loads YOUR javascript code -->
+    <!-- Templates -->
+    <template id="show-template">
+      <article class="show-card">
+        <h2 class="show__title"></h2>
+        <img class="show__image" src="" alt="show poster">
+        <div class="show__details">
+          <p class="show__rating"></p>
+          <p class="show__runtime"></p>
+          <p class="show__status"></p>
+          <div class="show__genres"></div>
+        </div>
+        <div class="show__summary"></div>
+      </article>
+    </template>
+
+    <template id="episode-template">
+      <section class="episode-card">
+        <h2 class="card__title"></h2>
+        <p class="card__code"></p>
+        <img class="card__image" src="" alt="card image" />
+        <div class="card__summary"></div>
+        <a class="card__link" href="#" target="_blank" rel="noopener noreferrer">View on TVMaze</a>
+      </section>
+    </template>
+  </main>
+  <footer id="container">
+    <h2>Data originally from <a href="https://tvmaze.com/">TV Maze</a></h2>
+    <p id="status-message"></p>
+  </footer>
   <script src="script.js"></script>
 </body>
 

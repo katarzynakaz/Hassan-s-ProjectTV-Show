@@ -1,7 +1,46 @@
-body{
+body {
   background-color: #BDDDE4;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
-#episodes-container {
+
+header {
+  background: #0077cc;
+  color: white;
+  padding: 1rem 0 0.5rem 0;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#return-to-shows {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 1rem;
+  cursor: pointer;
+  display: none;
+}
+
+#search-container {
+  margin: 1rem auto 0.5rem auto;
+  max-width: 600px;
+}
+
+#global-search {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.8rem;
+  border: 2px solid #0077cc;
+  border-radius: 25px;
+  font-size: 1rem;
+}
+
+.grid, #shows-container, #episodes-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -9,7 +48,63 @@ body{
   margin-top: 1rem;
 }
 
-#episode-card {
+.show-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 300px;
+  background: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.show__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.show__details {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.show__genres {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.show__genres span {
+  background: #0077cc;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+.show__summary {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #333;
+  text-align: left;
+}
+
+.episode-card {
   border: 1px solid white;
   border-radius: 5px;
   padding: 1rem;
@@ -24,26 +119,26 @@ body{
   align-items: center;
 }
 
-#episode-card img {
+.episode-card img {
   width: 100%; 
   height: auto; 
 }
 
-#episode-card h2 {
+.episode-card .card__title {
   font-size: 1.2rem;
   border: 1px solid black;
   border-radius: 4px; 
   width: 100%;
   padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
 }
 
-#episode-code {
-  display: block;
+.card__code {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-#episode-card a {
+.episode-card .card__link {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
@@ -51,11 +146,17 @@ body{
   color: white;
   border-radius: 4px;
   text-decoration: none;
+  transition: background 0.2s;
 }
 
-#root > p {
+.episode-card .card__link:hover {
+  background: #005fa3;
+}
+
+#status-message {
   text-align: center;
   font-size: 1rem;
   margin: 1rem 0;
   width: 100%;
+  color: red;
 }
