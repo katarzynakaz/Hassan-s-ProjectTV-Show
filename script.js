@@ -137,10 +137,12 @@ function handleGlobalSearch(event) {
 
 function showLoading(message) {
   document.getElementById("status-message").textContent = message;
+  document.getElementById("loading-spinner").style.display = "inline";
 }
 
 function hideStatus() {
   document.getElementById("status-message").textContent = "";
+  document.getElementById("loading-spinner").style.display = "none";
 }
 
 function showError(message) {
